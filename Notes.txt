@@ -1,0 +1,35 @@
+1- Functional Test Cases For Registration Page:
+
+---------------------------Manual Testing---------------------------------
+Verify the presence of all mandatory fields on the registration page.
+Ensure clear and concise instructions are provided on how to fill out the registration form.
+Confirm that the registration page maintains the data entered in the fields even after a submission attempt with missing information, so users don't need to re-enter valid data.
+
+
+---------------------------Automation Testing-----------------------------
+Test the registration page's behavior when trying to submit the form with just the email field filled out.
+Test the registration page's behavior when trying to submit the form with just the password field filled out.
+Ensure that error messages are displayed specifically for each empty mandatory field when attempting to submit the form with missing information.
+Check if the registration page provides inline validation for each field, indicating whether the provided information is valid or not as the user fills out the form.
+Test the behavior of the registration page when submitting the form with valid information in all mandatory fields.
+Verify that the registration page prevents submission if any mandatory field is left empty.
+Test the behavior when submitting the form with empty or blank fields individually.
+Test the response to submitting the form with all fields empty.
+Validate email format and response for invalid email addresses.
+Verify the enforcement of password strength criteria (length, special characters, numbers, etc.).
+Ensure the password and password confirmation fields match.
+Verify that the registration page correctly identifies and handles email addresses with multiple "@" symbols (e.g., "user@domain@domain.com").
+Test the registration page's handling of excessively long email addresses, ensuring it enforces a reasonable character limit and displays an error message if exceeded.
+Check the registration page's response to entering a password without any alphanumeric characters (e.g., "*********"), ensuring it enforces the inclusion of letters and numbers.
+Verify that the registration page properly handles passwords with spaces, special characters, or non-alphanumeric characters and validates them according to the specified criteria.
+Test the behavior when the password and password confirmation fields contain leading or trailing spaces, and ensure they are correctly handled and trimmed.
+Verify that the registration page detects and prevents the use of commonly used or easily guessable passwords (e.g., "password," "123456," "admin").
+Test the registration page's response when the password and password confirmation fields contain long strings of the same character (e.g., "aaaaaaaaaa").
+Check the response when providing an email address already registered.
+Verify that error messages are clear and user-friendly for various issues (e.g., invalid email, password mismatch).
+Test the response to using a username that is already taken.
+Test the ability to prevent duplicate accounts using the same email address.
+Verify that prohibited characters and spaces in usernames are disallowed.
+Check if the registration page treats email addresses with different casing (e.g., "User@email.com" and "user@email.com") as unique or not.
+Verify correct handling of very long usernames within input length limitations.
+Test the registration page's response when a user tries to register with a username that is already in use by another account, ensuring it prevents registration and displays a relevant error message.
