@@ -1,25 +1,11 @@
-Address,Category,City,Confirm Password,Email / Username,Expected Result,First Name,Last Name,Password,Phone #,SSN,State,Test Case,Username,Zip
-,Minimal Field Testing,,,user@example.com,Error for all other fields,,,,,,,Only Email,,
-,Minimal Field Testing,,,,Error for all other fields,,,P@ssw0rd1,,,,Only Password,,
-,Minimal Field Testing,,,,Show error messages for all required fields,,,,,,,All Fields Empty,,
-,Minimal Field Testing,,P@ssword1,john@example.com,Error on missing Last Name,John,,P@ssword1,,,,Missing Last Name,,
-123 Elm St,Valid Submission,NY,BKC5!WT3a5qq8,johndoe1444,Registration success,John,Doe,Secure@123,1234567890,123-45-6789,NY,All Valid,johndoe12,10001
-,Email Validation,,,useremail.com,Show invalid email error,,,,,,,Invalid Email (no @),,
-,Email Validation,,,user@domain@domain.com,Show invalid email error,,,,,,,Multiple @,,
-,Email Validation,,,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@domain.com,Show error for length,,,,,,,Excessively long,,
-,Email Validation,,,user@example.com,Show duplicate email error,,,,,,,Already Registered,,
-,Email Validation,,,User@Email.com,Treat as same email,,,,,,,Mixed Case,,
-,Password Validation,,********,,Show invalid password error,,,********,,,,No alphanumerics,,
-,Password Validation,,12345678,,Show invalid password error,,,12345678,,,,No letters,,
-,Password Validation,,abcdefgh,,Show invalid password error,,,abcdefgh,,,,No numbers,,
-,Password Validation,,Password2!,,Show mismatch error,,,Password1!,,,,Mismatch,,
-,Password Validation,,123456,,Reject weak password,,,123456,,,,Common password,,
-,Password Validation,,aaaaaaaaaa,,Reject weak password,,,aaaaaaaaaa,,,,Same character repeated,,
-,Password Validation,, Password1! ,,Trim and validate,,, Password1! ,,,,Leading/trailing spaces,,
-,Password Validation,,P@ss word!,,Accept if rules allow,,,P@ss word!,,,,Special characters,,
-,Password Validation,,AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Accept if within limit,,,AAAAAAAAAAAAAAAAAAAAAAAAAAA,,,,Long password,,
-,Username Testing,,,johndoe,Show username taken,,,,,,,Duplicate,,
-,Username Testing,,,john@doe,Reject username,,,,,,,Special Characters,,
-,Username Testing,,,john doe,Reject username,,,,,,,Spaces,,
-,Username Testing,,,john_doe_12345678901234567890,"Accept or truncate, based on limit",,,,,,,Very Long Username,,
-,Username Testing,,,User123,Depends on system rules,,,,,,,Case Sensitivity,,
+Test Case,First Name,Last Name,Address,City,State,Zip,Phone #,SSN,Username,Password,Confirm Password,Expected Result
+Test Case 1,,,,,,,,,test@example.com,,,Error for missing mandatory fields
+Test Case 2,,,,,,,,,,Password123!,,Error for missing mandatory fields
+Test Case 3,John,Doe,123 Elm St,Somewhere,CA,90210.0,1234567890.0,123-45-6789,johndoe,StrongPass1!,StrongPass1!,Success
+Test Case 4,Jane,Smith,456 Oak St,Anywhere,NY,10001.0,987654321.0,987-65-4321,janesmith,Valid123!,,Error: Password confirmation required
+Test Case 5,Alan,Turing,23 Logic Ln,Codeville,TX,75001.0,5551234567.0,321-54-6789,user@@domain.com,Alphanum123,Alphanum123,Error: Invalid email
+Test Case 6,Ada,Lovelace,9 Math Way,Calc City,WA,98001.0,3216549870.0,456-78-9012,adalove,SecurePass1,MismatchPass1,Error: Passwords do not match
+Test Case 7,Bob,Marley,77 Music Rd,Jamrock,FL,33101.0,7777777777.0,159-75-1234,bobmarley,password,password,Error: Weak password
+Test Case 8,Test,User,Long Street,Bigcity,IL,60007.0,1231231234.0,111-11-1111,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,TestPass123!,TestPass123!,Error: Username too long
+Test Case 9,Alice,Wonders,Mystery Ln,Fantasy,CO,80301.0,8889990000.0,222-33-4444,johndoe,UniquePass1,UniquePass1,Error: Username already taken
+Test Case 10,Rick,Roll,Never St,Internet,UT,84001.0,1230004567.0,999-88-7777,rickroll,*********,*********,Error: Password must include letters and numbers
